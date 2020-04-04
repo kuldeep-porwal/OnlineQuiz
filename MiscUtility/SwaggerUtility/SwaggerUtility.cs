@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using MiscUtility.ConfigurationUtility;
 using System.Collections.Generic;
 
 namespace MiscUtility.SwaggerUtility
@@ -7,27 +8,21 @@ namespace MiscUtility.SwaggerUtility
     {
         public static SwaggerConfiguration GetSwaggerConfiguration(IConfiguration configuration)
         {
-            SwaggerConfiguration swaggerConfiguration = new SwaggerConfiguration();
-            configuration.GetSection("Swagger").Bind(swaggerConfiguration);
-            return swaggerConfiguration;
+            return configuration.BindAndReturn<SwaggerConfiguration>("Swagger");
         }
+
         public static List<SwaggerDocumentInfo> GetSwaggerDocumentInfoConfiguration(IConfiguration configuration)
         {
-            List<SwaggerDocumentInfo> swaggerDocumentInfos = new List<SwaggerDocumentInfo>();
-            configuration
-                .GetSection("Swagger")
-                .GetSection("SwaggerDocumentInfos")
-                .Bind(swaggerDocumentInfos);
-            return swaggerDocumentInfos;
+            return SwaggerSectionWiseConfiguration<List<SwaggerDocumentInfo>>(configuration, "SwaggerDocumentInfos");
         }
         public static List<SwaggerEndpoint> GetSwaggerEndpointConfiguration(IConfiguration configuration)
         {
-            List<SwaggerEndpoint> swaggerEndpoints = new List<SwaggerEndpoint>();
-            configuration
-                .GetSection("Swagger")
-                .GetSection("SwaggerEndpoint")
-                .Bind(swaggerEndpoints);
-            return swaggerEndpoints;
+            return SwaggerSectionWiseConfiguration<List<SwaggerEndpoint>>(configuration, "SwaggerEndpoints");
+        }
+
+        public static T SwaggerSectionWiseConfiguration<T>(IConfiguration configuration, string sectionName) where T : new()
+        {
+            return configuration.GetSection("Swagger").BindAndReturn<T>(sectionName);
         }
     }
 }
