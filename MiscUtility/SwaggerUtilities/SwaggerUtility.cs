@@ -2,7 +2,7 @@
 using MiscUtility.ConfigurationUtility;
 using System.Collections.Generic;
 
-namespace MiscUtility.SwaggerUtility
+namespace MiscUtility.SwaggerUtilities
 {
     public class SwaggerUtility
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.OpenApi.Models;
 using System.Collections.Generic;
 
-namespace MiscUtility.SwaggerUtility
+namespace MiscUtility.SwaggerUtilities
 {
     public class SwaggerConfiguration
     {

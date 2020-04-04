@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 
-namespace MiscUtility.SwaggerUtility
+namespace MiscUtility.SwaggerUtilities
 {
     public static class SwaggerConfigurationExtensionMethods
     {

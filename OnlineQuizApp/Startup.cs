@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MiscUtility.SwaggerUtility;
+using MiscUtility.ConfigurationUtility;
+using MiscUtility.JwtTokenUtility;
+using MiscUtility.SwaggerUtilities;
 
 namespace OnlineQuizApp
 {
@@ -22,6 +24,7 @@ namespace OnlineQuizApp
 
             services.AddControllers();
 
+            services.AddJwtTokenService(Configuration.BindAndReturn<JwtTokenConfig>(nameof(JwtTokenConfig)));
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.ConfigureSwaggerService(SwaggerUtility.GetSwaggerDocumentInfoConfiguration(Configuration));
         }
@@ -40,6 +43,7 @@ namespace OnlineQuizApp
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
