@@ -10,8 +10,9 @@ using UserBiz.Model;
 
 namespace OnlineQuizApp.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("2.0")]
     [Authorize]
     public class LoginController : ControllerBase
     {
@@ -24,6 +25,7 @@ namespace OnlineQuizApp.Controllers
 
         [AllowAnonymous]
         [HttpPost("Login")]
+        [MapToApiVersion("1.0")]
         public async Task<ActionResult<LoginResponse>> Login(LoginRequest loginRequest)
         {
             return Ok(await loginManager.Login(loginRequest));
