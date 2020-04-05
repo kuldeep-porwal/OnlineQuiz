@@ -10,6 +10,7 @@ namespace MiscUtility.JwtTokenUtility
         public static void AddJwtTokenService(this IServiceCollection serviceCollection, JwtTokenConfig jwtTokenConfig)
         {
             serviceCollection.AddSingleton(jwtTokenConfig);
+            serviceCollection.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
             serviceCollection
                 .AddAuthentication(x =>
                 {

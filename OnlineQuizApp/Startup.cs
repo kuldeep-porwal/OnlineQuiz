@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using MiscUtility.ConfigurationUtility;
 using MiscUtility.JwtTokenUtility;
 using MiscUtility.SwaggerUtilities;
+using UserBiz;
 
 namespace OnlineQuizApp
 {
@@ -27,6 +28,8 @@ namespace OnlineQuizApp
             services.AddJwtTokenService(Configuration.BindAndReturn<JwtTokenConfig>(nameof(JwtTokenConfig)));
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.ConfigureSwaggerService(SwaggerUtility.GetSwaggerDocumentInfoConfiguration(Configuration));
+
+             services.AddScoped<ILoginManager, LoginManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

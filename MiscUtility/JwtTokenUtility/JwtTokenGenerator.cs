@@ -44,6 +44,7 @@ namespace MiscUtility.JwtTokenUtility
             {
                 new Claim(ClaimTypes.Email, tokenInfo.Email),
                 new Claim(ClaimTypes.Name, tokenInfo.UserName),
+                new Claim(ClaimTypes.Role, tokenInfo.Role),
                 new Claim(CustomClaimTypes.Id, tokenInfo.UserId.ToString())
             };
         }

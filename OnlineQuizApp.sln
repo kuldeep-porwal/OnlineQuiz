@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineQuizApp", "OnlineQuizApp\OnlineQuizApp.csproj", "{F5A8807C-1560-462B-B46D-ABCA49F462EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineQuizApp", "OnlineQuizApp\OnlineQuizApp.csproj", "{F5A8807C-1560-462B-B46D-ABCA49F462EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscUtility", "MiscUtility\MiscUtility.csproj", "{9D1D72DD-8DC1-498F-8A31-CF950B64775C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiscUtility", "MiscUtility\MiscUtility.csproj", "{9D1D72DD-8DC1-498F-8A31-CF950B64775C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{ED3F4D02-4F08-47B2-B133-1E0A2A999CCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserBiz", "UserBiz\UserBiz.csproj", "{2DE7EB91-9CDC-4E5E-A9EC-31CAAD2509A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonModel", "CommonModel\CommonModel.csproj", "{C50DADF3-2C62-4162-94BB-71C46D886116}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +27,20 @@ Global
 		{9D1D72DD-8DC1-498F-8A31-CF950B64775C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D1D72DD-8DC1-498F-8A31-CF950B64775C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D1D72DD-8DC1-498F-8A31-CF950B64775C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE7EB91-9CDC-4E5E-A9EC-31CAAD2509A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE7EB91-9CDC-4E5E-A9EC-31CAAD2509A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE7EB91-9CDC-4E5E-A9EC-31CAAD2509A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE7EB91-9CDC-4E5E-A9EC-31CAAD2509A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C50DADF3-2C62-4162-94BB-71C46D886116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50DADF3-2C62-4162-94BB-71C46D886116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50DADF3-2C62-4162-94BB-71C46D886116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50DADF3-2C62-4162-94BB-71C46D886116}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2DE7EB91-9CDC-4E5E-A9EC-31CAAD2509A2} = {ED3F4D02-4F08-47B2-B133-1E0A2A999CCD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E782FEF-29A9-49B5-98CA-0317B6C1C5B9}
